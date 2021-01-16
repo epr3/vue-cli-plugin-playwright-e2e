@@ -1,6 +1,5 @@
 module.exports = {
-  moduleFileExtensions: ["js", "jsx", "json"],
-  transformIgnorePatterns: ["/node_modules/"],
+  preset: "jest-playwright-preset",
   // support the same @ -> src alias mapping in source code
   moduleNameMapper: {
     "^@/(.*)$": "<rootDir>/src/$1",
