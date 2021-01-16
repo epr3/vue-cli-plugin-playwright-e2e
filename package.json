@@ -1,0 +1,44 @@
+{
+  "name": "vue-cli-plugin-playwright-e2e",
+  "version": "0.0.1",
+  "description": "e2e-playwright plugin for vue-cli",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/epr3/vue-cli-plugin-playwright-e2e.git"
+  },
+  "keywords": [
+    "vue",
+    "cli",
+    "e2e-playwright"
+  ],
+  "author": "Eduard Predescu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/epr3/vue-cli-plugin-playwright-e2e/issues"
+  },
+  "homepage": "https://github.com/epr3/vue-cli-plugin-playwright-e2e#readme",
+  "dependencies": {
+    "@vue/cli-shared-utils": "^4.5.10",
+    "jest": "^26.6.3",
+    "mocha": "^8.2.1",
+    "mochapack": "^2.0.6",
+    "playwright": "^1.7.1"
+  },
+  "devDependencies": {
+    "@vue/test-utils": "^1.1.2",
+    "eslint": "^7.18.0",
+    "eslint-config-prettier": "^7.1.0",
+    "eslint-plugin-prettier": "^3.3.1",
+    "prettier": "^2.2.1"
+  },
+  "peerDependencies": {
+    "@vue/cli-service": "^3.0.0 || ^4.0.0 || ^5.0.0-0"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
