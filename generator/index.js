@@ -1,22 +1,15 @@
 module.exports = (api, options, rootOptions, invoking) => {
   if (api.hasPlugin("unit-jest") || options.testingFramework === "jest") {
-    api.render("./template-jest", { hasTS: api.hasPlugin("typescript") });
+    api.render("./template-jest", {
+      hasTS: api.hasPlugin("typescript"),
+      hasBabel: api.hasPlugin("babel"),
+    });
   }
   if (api.hasPlugin("unit-mocha") || options.testingFramework === "mocha") {
     api.render("./template-mocha", { hasTS: api.hasPlugin("typescript") });
   }
 
   let extendPackage = {};
-
-  if (options.testingFramework === "jest") {
-    extendPackage = {
-      jest: {
-        preset: api.hasPlugin("babel")
-          ? "@vue/cli-plugin-unit-jest"
-          : "@vue/cli-plugin-unit-jest/presets/no-babel",
-      },
-    };
-  }
 
   if (options.testingFramework === "mocha") {
     // mochapack currently does not support webpack 5 yet
@@ -59,10 +52,7 @@ const applyESLint = (module.exports.applyESLint = (api, options) => {
       eslintConfig: {
         overrides: [
           {
-            files: [
-              "**/__tests__/*.{j,t}s?(x)",
-              "**/tests/unit/**/*.spec.{j,t}s?(x)",
-            ],
+            files: ["**/tests/e2e/**/*.spec.{j,t}s?(x)"],
             env: {
               jest: true,
             },
@@ -76,10 +66,7 @@ const applyESLint = (module.exports.applyESLint = (api, options) => {
       eslintConfig: {
         overrides: [
           {
-            files: [
-              "**/__tests__/*.{j,t}s?(x)",
-              "**/tests/unit/**/*.spec.{j,t}s?(x)",
-            ],
+            files: ["**/tests/e2e/**/*.spec.{j,t}s?(x)"],
             env: {
               mocha: true,
             },
@@ -93,11 +80,6 @@ const applyESLint = (module.exports.applyESLint = (api, options) => {
 const applyTS = (module.exports.applyTS = (api, options, invoking) => {
   if (options.testingFramework === "jest") {
     api.extendPackage({
-      jest: {
-        preset: api.hasPlugin("babel")
-          ? "@vue/cli-plugin-unit-jest/presets/typescript-and-babel"
-          : "@vue/cli-plugin-unit-jest/presets/typescript",
-      },
       devDependencies: {
         "@types/jest": "^26.0.19",
       },
