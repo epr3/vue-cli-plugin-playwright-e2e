@@ -21,18 +21,6 @@
     "url": "https://github.com/epr3/vue-cli-plugin-playwright-e2e/issues"
   },
   "homepage": "https://github.com/epr3/vue-cli-plugin-playwright-e2e#readme",
-  "dependencies": {
-    "@vue/cli-plugin-webpack-4": "^5.0.0-alpha.2",
-    "@vue/cli-shared-utils": "^5.0.0-alpha.2",
-    "deepmerge": "^1.5.2",
-    "jest": "^26.6.3",
-    "jest-playwright-preset": "^1.4.4",
-    "jest-watch-typeahead": "^0.6.1",
-    "mocha": "^8.2.1",
-    "mochapack": "^2.0.6",
-    "playwright": "^1.7.1",
-    "ts-jest": "^26.4.4"
-  },
   "devDependencies": {
     "eslint": "^7.18.0",
     "eslint-config-prettier": "^7.1.0",

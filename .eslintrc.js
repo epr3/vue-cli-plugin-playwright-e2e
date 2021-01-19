@@ -4,8 +4,6 @@ module.exports = {
     browser: true,
     node: true,
     es6: true,
-    mocha: true,
-    jest: true,
   },
   parserOptions: {
     ecmaVersion: 2018,
